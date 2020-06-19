@@ -48,12 +48,12 @@ Sub stockAnalysisLoop()
                     Else
                         ' Find first instance of non zero start value
                         If Cells(start, 3) = 0 Then
-                            For find_value = start To i
+                            For get_value = start To i
                                 If Cells(find_value, 3).Value <> 0 Then
-                                    start = find_value
+                                    start = get_value
                                     Exit For
                                 End If
-                             Next find_value
+                             Next get_value
                         End If
         
                         ' Get change/pct change
@@ -81,10 +81,10 @@ Sub stockAnalysisLoop()
                     End If
         
                     ' resetting our variables/dimensions for the next ticker
-                    total = 0
-                    change = 0
-                    j = j + 1
                     days = 0
+                    change = 0
+                    total = 0
+                    j = j + 1
         
                 ' add results if ticker is same as before
                 Else
